@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html
+    environment:
+      - CI_ENVIRONMENT=development
+    networks:
+      - furancho-network
+
+networks:
+  furancho-network:
+    driver: bridge

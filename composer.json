@@ -1,0 +1,20 @@
+{
+    "name": "furancho/finder",
+    "description": "FuranchoFinder - Encuentra los mejores furanchos",
+    "license": "MIT",
+    "require": {
+        "php": "^8.1",
+        "codeigniter4/framework": "4.3.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "allow-plugins": {
+            "codeigniter4/composer-install-plugin": true
+        }
+    }
+}

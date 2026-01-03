@@ -1,0 +1,90 @@
+[
+  {
+    "id": 1,
+    "name": "Don Pepe Tacos",
+    "description": "Deliciosos tacos de carne asada y al pastor",
+    "latitude": 40.4168,
+    "longitude": -3.7038,
+    "category": "Tacos",
+    "rating": 4.5,
+    "reviews": 48,
+    "image": "tacos.jpg"
+  },
+  {
+    "id": 2,
+    "name": "La Arepa Dorada",
+    "description": "Arepas venezolanas rellenas con queso, carnes y vegetales",
+    "latitude": 40.4200,
+    "longitude": -3.7050,
+    "category": "Arepas",
+    "rating": 4.7,
+    "reviews": 62,
+    "image": "arepas.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Churros Don Luis",
+    "description": "Churros caseros con chocolate caliente",
+    "latitude": 40.4150,
+    "longitude": -3.7020,
+    "category": "Postres",
+    "rating": 4.8,
+    "reviews": 95,
+    "image": "churros.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Empanadas Criollas",
+    "description": "Empanadas de carne, queso y champiñones",
+    "latitude": 40.4180,
+    "longitude": -3.7080,
+    "category": "Empanadas",
+    "rating": 4.3,
+    "reviews": 34,
+    "image": "empanadas.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Cevichería Marina",
+    "description": "Ceviches frescos y tiraditos peruanos",
+    "latitude": 40.4160,
+    "longitude": -3.6980,
+    "category": "Ceviches",
+    "rating": 4.6,
+    "reviews": 71,
+    "image": "ceviche.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Anticuchos del Chef",
+    "description": "Brochetas de carne marinadas con especias",
+    "latitude": 40.4190,
+    "longitude": -3.7100,
+    "category": "Parrilla",
+    "rating": 4.4,
+    "reviews": 44,
+    "image": "anticuchos.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Papas Rellenas Abuelita",
+    "description": "Papas rellenas de carne con salsa ají",
+    "latitude": 40.4140,
+    "longitude": -3.7010,
+    "category": "Papas Rellenas",
+    "rating": 4.5,
+    "reviews": 38,
+    "image": "papas.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Completos Chilenos",
+    "description": "Hot dogs completos con guacamole y mayonesa",
+    "latitude": 40.4170,
+    "longitude": -3.7120,
+    "category": "Hot Dogs",
+    "rating": 4.2,
+    "reviews": 29,
+    "image": "completos.jpg"
+  }
+]

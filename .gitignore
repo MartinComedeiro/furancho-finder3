@@ -1,0 +1,12 @@
+# Archivos y carpetas a ignorar en Git
+/vendor/
+/writable/
+/.vscode/
+/.DS_Store
+*.log
+*.swp
+*.swo
+*~
+node_modules/
+.composer/
+composer.lock
