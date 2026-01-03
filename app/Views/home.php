@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FuranchoFinder - Encuentra los mejores furanchos</title>
+    <title>FuranchoFinder - Descubre los mejores furanchos de Galicia</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -11,8 +11,8 @@
     <div class="container">
         <header class="header">
             <div class="header-content">
-                <h1>🌮 FuranchoFinder</h1>
-                <p>Descubre los mejores furanchos cerca de ti</p>
+                <h1>🍷 FuranchoFinder</h1>
+                <p>Descubre los mejores furanchos de Galicia</p>
             </div>
             <div class="auth-section">
                 <div id="loginForm" class="login-form">
@@ -29,17 +29,6 @@
 
         <div class="content">
             <div class="sidebar">
-                <h2>Categorías</h2>
-                <div class="categories">
-                    <button class="category-btn active" data-category="all">Todos</button>
-                    <button class="category-btn" data-category="Tacos">Tacos</button>
-                    <button class="category-btn" data-category="Arepas">Arepas</button>
-                    <button class="category-btn" data-category="Postres">Postres</button>
-                    <button class="category-btn" data-category="Empanadas">Empanadas</button>
-                    <button class="category-btn" data-category="Ceviches">Ceviches</button>
-                    <button class="category-btn" data-category="Parrilla">Parrilla</button>
-                </div>
-
                 <h2>Favoritos</h2>
                 <div id="favorites" class="favorites-list"></div>
             </div>

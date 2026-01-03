@@ -3,7 +3,6 @@ let markers = {};
 let furanchos = [];
 let users = [];
 let currentUser = null;
-let currentCategory = 'all';
 
 // Inicializar
 document.addEventListener('DOMContentLoaded', function() {
@@ -15,7 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initMap() {
-    map = L.map('map').setView([40.4168, -3.7038], 13);
+    // Centro en Galicia
+    map = L.map('map').setView([42.5, -8.2], 9);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors',
@@ -49,14 +49,23 @@ function displayFuranchos(furanchosToDisplay) {
 
     furanchosToDisplay.forEach(furancho => {
         const icon = L.divIcon({
-            html: `<div class="marker-icon">🌮</div>`,
+            html: `<div style="font-size: 32px; text-align: center; line-height: 1;">🍷</div>`,
             className: 'furancho-marker',
-            iconSize: [30, 30],
-            popupAnchor: [0, -15]
+            iconSize: [40, 40],
+            popupAnchor: [0, -20]
         });
 
+        const popupContent = `
+            <div class="popup-bodega">
+                <strong>${furancho.name}</strong><br/>
+                <em>${furancho.region}</em><br/>
+                <span class="rating">⭐ ${furancho.rating} (${furancho.reviews})</span><br/>
+                <small>${furancho.especialidad}</small>
+            </div>
+        `;
+
         const marker = L.marker([furancho.latitude, furancho.longitude], { icon })
-            .bindPopup(`<strong>${furancho.name}</strong><br>${furancho.category}`, { maxWidth: 200 })
+            .bindPopup(popupContent, { maxWidth: 250 })
             .addTo(map);
 
         marker.on('click', () => showFuranchoInfo(furancho));
@@ -71,9 +80,14 @@ function showFuranchoInfo(furancho) {
     infoPanel.innerHTML = `
         <div class="furancho-details">
             <h3>${furancho.name}</h3>
+            <p><strong>Región:</strong> ${furancho.region}</p>
+            <p><strong>Especialidad:</strong> ${furancho.especialidad}</p>
             <p>${furancho.description}</p>
             <div class="rating">⭐ ${furancho.rating} (${furancho.reviews} reseñas)</div>
-            <span class="category-badge">${furancho.category}</span>
+            <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid #eee;">
+                <p><strong>📞</strong> ${furancho.phone}</p>
+                <p><strong>🕐</strong> ${furancho.horario}</p>
+            </div>
             <div style="margin-top: 15px;">
                 <button onclick="toggleFavoriteSidebar(${furancho.id})" class="fav-btn ${isFavorited ? 'favorited' : ''}">
                     ${isFavorited ? '❤' : '♡'} ${isFavorited ? 'En Favoritos' : 'Agregar a Favoritos'}
@@ -87,25 +101,17 @@ function showFuranchoInfo(furancho) {
     const modalBody = document.getElementById('modalBody');
     modalBody.innerHTML = `
         <h2>${furancho.name}</h2>
+        <p><strong>Región:</strong> ${furancho.region}</p>
+        <p><strong>Especialidad:</strong> ${furancho.especialidad}</p>
         <p><strong>Descripción:</strong> ${furancho.description}</p>
-        <p><strong>Categoría:</strong> ${furancho.category}</p>
         <p><strong>Calificación:</strong> ⭐ ${furancho.rating} (${furancho.reviews} reseñas)</p>
-        <p><strong>Ubicación:</strong> ${furancho.latitude.toFixed(4)}, ${furancho.longitude.toFixed(4)}</p>
+        <p><strong>Teléfono:</strong> ${furancho.phone}</p>
+        <p><strong>Horario:</strong> ${furancho.horario}</p>
     `;
     document.getElementById('favBtn').dataset.furanchoId = furancho.id;
 }
 
 function setupEventListeners() {
-    // Filtrar por categoría
-    document.querySelectorAll('.category-btn').forEach(btn => {
-        btn.addEventListener('click', function() {
-            document.querySelectorAll('.category-btn').forEach(b => b.classList.remove('active'));
-            this.classList.add('active');
-            currentCategory = this.dataset.category;
-            filterByCategory();
-        });
-    });
-
     // Modal close button
     document.querySelector('.close').addEventListener('click', function() {
         document.getElementById('furanchoModal').style.display = 'none';
@@ -118,15 +124,6 @@ function setupEventListeners() {
             modal.style.display = 'none';
         }
     });
-}
-
-function filterByCategory() {
-    if (currentCategory === 'all') {
-        displayFuranchos(furanchos);
-    } else {
-        const filtered = furanchos.filter(f => f.category === currentCategory);
-        displayFuranchos(filtered);
-    }
 }
 
 function login() {

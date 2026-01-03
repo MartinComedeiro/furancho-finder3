@@ -104,6 +104,7 @@ header.header {
     flex-direction: column;
     gap: 8px;
     margin-bottom: 30px;
+    display: none;
 }
 
 .category-btn {
@@ -116,6 +117,7 @@ header.header {
     text-align: left;
     font-weight: 500;
     color: #555;
+    display: none;
 }
 
 .category-btn:hover {
@@ -210,6 +212,40 @@ header.header {
     margin-top: 8px;
 }
 
+.popup-bodega {
+    padding: 8px;
+    text-align: center;
+    line-height: 1.5;
+}
+
+.popup-bodega strong {
+    display: block;
+    font-size: 14px;
+    color: #667eea;
+    margin-bottom: 4px;
+}
+
+.popup-bodega em {
+    display: block;
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 4px;
+}
+
+.popup-bodega .rating {
+    display: block;
+    color: #ff9800;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.popup-bodega small {
+    display: block;
+    color: #555;
+    font-size: 11px;
+    margin-top: 4px;
+}
+
 /* Modal */
 .modal {
     display: none;
@@ -284,6 +320,17 @@ header.header {
 .marker-category {
     font-size: 12px;
     color: #999;
+}
+
+.marker-icon {
+    font-size: 32px;
+    text-align: center;
+    line-height: 1.2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Responsive */
